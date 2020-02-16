@@ -4,6 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/qmartina/CLionProjects/ft_printf/add_buff.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/add_buff.c.o"
+  "/Users/qmartina/CLionProjects/ft_printf/add_char.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/add_char.c.o"
+  "/Users/qmartina/CLionProjects/ft_printf/add_d.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/add_d.c.o"
+  "/Users/qmartina/CLionProjects/ft_printf/add_str.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/add_str.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_add_c_s_d.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_add_c_s_d.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_color.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_color.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_printf.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_printf.c.o"

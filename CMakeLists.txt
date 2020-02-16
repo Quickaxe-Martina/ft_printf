@@ -9,4 +9,8 @@ add_executable(ft_printf
         main.c
         ft_printf.c
         ft_color.c
-        ft_add_c_s_d.c)
+        ft_add_c_s_d.c
+        add_char.c
+        add_str.c
+        add_buff.c
+        add_d.c)

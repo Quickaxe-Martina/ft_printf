@@ -80,6 +80,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/add_buff.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/add_char.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/add_d.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/add_str.c">
+			<Option target="ft_printf"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_add_c_s_d.c">
 			<Option target="ft_printf"/>
 		</Unit>

@@ -19,8 +19,8 @@ int main(void)
 //	printf("HELLO!%0-015.5s!\n", "this is test");
 //	printf("HELLO!%015.5s!\n", "this is test");
 //	printf("HELLO!% 15.5s!\n", "this is test");
-	//printf("orig: %-10.5d!\n", 123456789);
-	//ft_printf("test: %-10.5d!\n", 123456789);
+//	printf("orig: %-10.5d!\n", 123456789);
+//	ft_printf("test: %-10.5d!\n", 123456789);
 	//printf("orig: u:%u;o:%o;x:%x;X:%X;\n", 1234, 1234, 1234, 1234);
 	//printf("orig: u:%u;o:%o;x:%x;X:%X;\n", -1234, -1234, -1234, -1234);
 	//printf("orig: u:%hhu;o:%hho;x:%hhx;X:%hhX;\n", 1234, 1234, 1234, 1234);
@@ -31,4 +31,7 @@ int main(void)
 	//ft_printf("test: %d;%ld;%lld;%hd;%hhd;\n", 12345, 12345, 12345, 12345, 12345);
 	//printf("orig: %f\n", 123.567);
 	//ft_printf("test: %f\n", 123.567);
+	printf("\n%d\n", ft_printf("%04d", -532));
+	printf("%04d", -532);
+	return (6);
 }

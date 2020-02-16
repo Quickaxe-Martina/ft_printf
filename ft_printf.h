@@ -28,6 +28,7 @@ typedef struct			s_printf
 	int 				minus;
 	int 				space;
 	int 				plus;
+	int 				point;
 	int					width;//ширина
 	int					accuracy;//точность
 	int					fd;
@@ -57,6 +58,7 @@ int		ft_add_p(t_printf *p);
 char	*ft_itoa_base_c(__int128_t n, int base, int up);
 int		ft_add_ouxX(t_printf *p);
 int 	ft_add_f(t_printf *p);
+int 	ft_addchar_c(t_printf *p, char ch);
 /*
 **ft_color.c
 */

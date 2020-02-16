@@ -1,29 +1,23 @@
 #include "ft_printf.h"
 
-void	ft_realloc_buff(t_printf *p)
-{
-	char	*tmp;
-	int 	i;
-
-	buff_size *= 2;
-	i = -1;
-	tmp = (char *)malloc(sizeof(char) * buff_size + 1);///////////////////////////////////////////
-	while (++i < p->buff_index)
-		tmp[i] = p->buff[i];
-	free(p->buff);
-	p->buff = tmp;
-}
-
 int 	ft_tocnost(t_printf *p)
 {
-	p->width = atoi(p->str);/////////////////////////////
-	while (*p->str >= '0' && *p->str <= '9')
-		p->str++;
-	if (*p->str == '.')
+	if (p->point == 0)
 	{
-		p->str++;
-		p->accuracy = atoi(p->str);///////////////////////////////
+		p->width = ft_atoi(p->str);
+//		printf("WWaccur: %d\n", p->width);
+		while (*p->str >= '0' && *p->str <= '9')
+			p->str++;
+		if (*p->str == '.')
+		{
+			p->str++;
+			p->accuracy = ft_atoi(p->str);
+			p->point = 1;
+//			printf("TTaccur: %d\n", p->accuracy);
+		}
 	}
+	else
+		p->accuracy = ft_atoi(p->str);
 	while (*p->str >= '0' && *p->str <= '9')
 		p->str++;
 	//printf("p->shir= %d\np->toc= %d\n", p->width, p->accuracy);
@@ -71,6 +65,7 @@ void	ft_get_flags(t_printf *p)
 		else if (*p->str == '.')
 		{
 			p->zero = 0;
+			p->point = 1;
 			p->str++;
 			break ;
 		}
@@ -85,6 +80,7 @@ void	ft_reset_flags(t_printf *p)
 	p->minus = 0;
 	p->space = 0;
 	p->plus = 0;
+	p->point = 0;
 	p->width = 0;
 	p->accuracy = 0;
 	p->l = 0;
@@ -108,10 +104,8 @@ void	ft_cheak_lhL(t_printf *p)
 
 int 	ft_parser(t_printf *p)
 {
-//	printf("pars: %c\n", *p->str);
 	ft_reset_flags(p);
 	ft_get_flags(p);
-//	printf("flags: %d\n", p->minus);
 	if (!is_a_flag(*p->str))
 	{
 		p->str--;
@@ -127,7 +121,9 @@ int 	ft_parser(t_printf *p)
 	else if (*p->str == 'c')
 		ft_addchar(p);
 	else if (*p->str == '%')
-		ft_add_buff_char(p, '%');
+	{
+		ft_addchar_c(p, '%');
+	}
 	else if (*p->str == 'd' || *p->str == 'i')
 		ft_addnbr(p);
 	else if (*p->str == 'f')
@@ -139,7 +135,6 @@ int 	ft_parser(t_printf *p)
 		ft_add_p(p);
 	else if (*p->str == 'o' || *p->str == 'u' || *p->str == 'x' || *p->str == 'X')
 		ft_add_ouxX(p);
-//	else if (*p->str == p, o, u, x, X, f)
 	return (1);
 }
 

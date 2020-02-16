@@ -123,6 +123,114 @@ ft_printf/fast:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/build
 .PHONY : ft_printf/fast
 
+add_buff.o: add_buff.c.o
+
+.PHONY : add_buff.o
+
+# target to build an object file
+add_buff.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_buff.c.o
+.PHONY : add_buff.c.o
+
+add_buff.i: add_buff.c.i
+
+.PHONY : add_buff.i
+
+# target to preprocess a source file
+add_buff.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_buff.c.i
+.PHONY : add_buff.c.i
+
+add_buff.s: add_buff.c.s
+
+.PHONY : add_buff.s
+
+# target to generate assembly for a file
+add_buff.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_buff.c.s
+.PHONY : add_buff.c.s
+
+add_char.o: add_char.c.o
+
+.PHONY : add_char.o
+
+# target to build an object file
+add_char.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_char.c.o
+.PHONY : add_char.c.o
+
+add_char.i: add_char.c.i
+
+.PHONY : add_char.i
+
+# target to preprocess a source file
+add_char.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_char.c.i
+.PHONY : add_char.c.i
+
+add_char.s: add_char.c.s
+
+.PHONY : add_char.s
+
+# target to generate assembly for a file
+add_char.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_char.c.s
+.PHONY : add_char.c.s
+
+add_d.o: add_d.c.o
+
+.PHONY : add_d.o
+
+# target to build an object file
+add_d.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_d.c.o
+.PHONY : add_d.c.o
+
+add_d.i: add_d.c.i
+
+.PHONY : add_d.i
+
+# target to preprocess a source file
+add_d.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_d.c.i
+.PHONY : add_d.c.i
+
+add_d.s: add_d.c.s
+
+.PHONY : add_d.s
+
+# target to generate assembly for a file
+add_d.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_d.c.s
+.PHONY : add_d.c.s
+
+add_str.o: add_str.c.o
+
+.PHONY : add_str.o
+
+# target to build an object file
+add_str.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_str.c.o
+.PHONY : add_str.c.o
+
+add_str.i: add_str.c.i
+
+.PHONY : add_str.i
+
+# target to preprocess a source file
+add_str.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_str.c.i
+.PHONY : add_str.c.i
+
+add_str.s: add_str.c.s
+
+.PHONY : add_str.s
+
+# target to generate assembly for a file
+add_str.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/add_str.c.s
+.PHONY : add_str.c.s
+
 ft_add_c_s_d.o: ft_add_c_s_d.c.o
 
 .PHONY : ft_add_c_s_d.o
@@ -240,6 +348,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ft_printf"
+	@echo "... add_buff.o"
+	@echo "... add_buff.i"
+	@echo "... add_buff.s"
+	@echo "... add_char.o"
+	@echo "... add_char.i"
+	@echo "... add_char.s"
+	@echo "... add_d.o"
+	@echo "... add_d.i"
+	@echo "... add_d.s"
+	@echo "... add_str.o"
+	@echo "... add_str.i"
+	@echo "... add_str.s"
 	@echo "... ft_add_c_s_d.o"
 	@echo "... ft_add_c_s_d.i"
 	@echo "... ft_add_c_s_d.s"

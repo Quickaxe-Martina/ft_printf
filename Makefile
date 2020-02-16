@@ -10,14 +10,22 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libftprintf.a
+NAME = libftprintf.a
 
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-SRC = main.c ft_printf.c ft_add_c_s_d.c ft_color.c
-OBJ= $(patsubst %.c,%.o,$(SRC))
 
-HEADER = -I ft_printf.h
 PATH_LIBFT = libft
+
+SRC = ft_printf.c\
+		ft_color.c\
+		ft_add_c_s_d.c\
+		add_char.c\
+		add_str.c\
+		add_buff.c\
+		add_d.c\
+
+OBJ = $(patsubst %.c,%.o,$(SRC))
 
 all: $(NAME)
 
@@ -30,7 +38,7 @@ $(NAME): $(PATH_LIBFT)/libft.a $(OBJ)
 $(PATH_LIBFT)/libft.a:
 	make -C $(PATH_LIBFT)
 
-%.o: %.c libftprintf.h
+%.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $<
 
 clean:
