@@ -128,8 +128,7 @@ int 	ft_parser(t_printf *p)
 		ft_addnbr(p);
 	else if (*p->str == 'f')
 	{
-//		ft_add_f(p);
-		;
+		ft_add_f(p);
 	}
 	else if (*p->str == 'p')
 		ft_add_p(p);

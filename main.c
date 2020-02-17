@@ -31,7 +31,11 @@ int main(void)
 	//ft_printf("test: %d;%ld;%lld;%hd;%hhd;\n", 12345, 12345, 12345, 12345, 12345);
 	//printf("orig: %f\n", 123.567);
 	//ft_printf("test: %f\n", 123.567);
-	printf("\n%d\n", ft_printf("%04d", -532));
-	printf("%04d", -532);
+	printf("\n%d\n", ft_printf("%04d\n", -532));
+	printf("%04d\n", -532);
+	printf("test:\n");
+	ft_printf("%f\n", 263.3);
+	printf("orig:\n");
+	printf("%f\n", 263.3);
 	return (6);
 }
