@@ -1,49 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_str.c                                          :+:      :+:    :+:   */
+/*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/16 21:12:12 by qmartina          #+#    #+#             */
-/*   Updated: 2020/02/16 21:12:15 by qmartina         ###   ########.fr       */
+/*   Created: 2020/02/28 06:51:43 by qmartina          #+#    #+#             */
+/*   Updated: 2020/02/28 06:51:45 by qmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_addstr(t_printf *p)
+int		ft_add_p(t_printf *p)
 {
+	void	*pointer;
 	char	*s;
-	int		i;
-	char	c;
+	char 	*tmp;
+	int 	i;
 
+	pointer = va_arg(p->li, void *);
+	s = ft_itoa_base_c((uintmax_t)pointer, 16, -32);
+	tmp = s;
+	s = ft_strjoin("0x", tmp);
+	free(tmp);
 	i = -1;
-	s = ft_strdup(va_arg(p->li, char*));
-	if (s == NULL)
-		s = ft_strdup("(null)");
-//	printf("point: %d\n", p->point);
-	if ((p->accuracy > 0 || p->point == 1) && p->accuracy < (int)ft_strlen(s))
-		s[p->accuracy] = '\0';//////////////////////возможен инвалид врайт
-	if (p->point == 1 && p->accuracy == -1)
-		s[0] = '\0';
 	if (p->width > 0 && p->width > (int)ft_strlen(s))
 	{
-		if (p->zero == 1)
-			c = '0';
-		else
-			c = ' ';
 		if (p->minus == 1)
 		{
 			while(s[++i])
 				ft_add_buff_char(p, s[i]);
 			while(++i <= p->width)
-				ft_add_buff_char(p, c);
+				ft_add_buff_char(p, ' ');
 		}
 		else if (p->minus == 0)
 		{
 			while(++i < (p->width - (int)ft_strlen(s)))
-				ft_add_buff_char(p, c);
+				ft_add_buff_char(p, ' ');
 			i = -1;
 			while(s[++i])
 				ft_add_buff_char(p, s[i]);

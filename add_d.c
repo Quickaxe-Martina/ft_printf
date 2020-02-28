@@ -42,9 +42,9 @@ char 	*ft_add_accur(char *str, int acu, t_printf *p)
 	return (s);
 }
 
-int 	ft_add_plus(t_printf *p)
+int 	ft_add_plus(t_printf *p, int flag)
 {
-	if (p->buff_index != 0)
+	if (p->buff_index != 0 && flag == 1)
 		p->buff_index--;
 	ft_add_buff_char(p, '+');
 	return (1);
@@ -64,16 +64,21 @@ int 	ft_addnbr(t_printf *p)
 	s = ft_itoa_base_c(nbr, 10, 0);
 	if (p->accuracy > (int)ft_strlen(s) || (nbr < 0 && p->accuracy > (int)ft_strlen(s) - 1))
 		s = ft_add_accur(s, p->accuracy, p);
+	if (p->accuracy == 0 || (p->accuracy == -1 && p->point == 1))
+		s[0] = '\0';
+	k = (__int128_t)ft_strlen(s) - 1;
 	p->zero = p->accuracy > 0 ? 0 : p->zero;
-	k = ft_strlen(s) - 1;
-//	printf("PLUS: %s",s);
+	if (p->space == 1 && s[0] != '-')
+	{
+		ft_add_buff_char(p, ' ');
+		p->width--;
+	}
 	if (p->width > 0 && k < p->width)
 	{
 		c = p->zero ? '0' : ' ';
 		if (p->minus == 1)
 		{
-//			p->buff[p->buff_index - 1] = p->plus == 1 && nbr >= 0 ? '+' : p->buff[p->buff_index - 1];
-			k += p->plus && nbr >= 0 ? ft_add_plus(p) : 0;
+			k += p->plus && nbr >= 0 ? ft_add_plus(p, 1) : 0;
 			ft_add_buff_str(p, s);
 			while(p->width - ++k)
 				ft_add_buff_char(p, c);
@@ -82,19 +87,18 @@ int 	ft_addnbr(t_printf *p)
 		{
 			p->width -= nbr < 0 && p->zero ? ft_add_buff_char(p, '-') : 0;
 			s[0] = nbr < 0 && p->zero && p->width > k ? '0' : s[0];
-//			printf("PLUS: %s",s);
-			k += p->plus && nbr >= 0 && p->zero ? ft_add_plus(p) : 0;
+			k += p->plus && nbr >= 0 && p->zero ? ft_add_plus(p, 0) : 0;
 			while(++k < p->width)
 				ft_add_buff_char(p, c);
 			if (p->width == (int)ft_strlen(s) - 1)
 				p->buff_index--;
-			p->plus && nbr >= 0 && !p->zero ? ft_add_plus(p) : 0;
+			p->plus && nbr >= 0 && !p->zero ? ft_add_plus(p, 1) : 0;
 			ft_add_buff_str(p, s);
 		}
 	}
 	else
 	{
-		p->plus && nbr >= 0 ? ft_add_plus(p) : 0;
+		p->plus && nbr >= 0 ? ft_add_plus(p, 0) : 0;
 		ft_add_buff_str(p, s);
 	}
 	free(s);

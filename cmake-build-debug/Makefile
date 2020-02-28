@@ -285,6 +285,87 @@ ft_color.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_color.c.s
 .PHONY : ft_color.c.s
 
+ft_itoa_base_c.o: ft_itoa_base_c.c.o
+
+.PHONY : ft_itoa_base_c.o
+
+# target to build an object file
+ft_itoa_base_c.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_itoa_base_c.c.o
+.PHONY : ft_itoa_base_c.c.o
+
+ft_itoa_base_c.i: ft_itoa_base_c.c.i
+
+.PHONY : ft_itoa_base_c.i
+
+# target to preprocess a source file
+ft_itoa_base_c.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_itoa_base_c.c.i
+.PHONY : ft_itoa_base_c.c.i
+
+ft_itoa_base_c.s: ft_itoa_base_c.c.s
+
+.PHONY : ft_itoa_base_c.s
+
+# target to generate assembly for a file
+ft_itoa_base_c.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_itoa_base_c.c.s
+.PHONY : ft_itoa_base_c.c.s
+
+ft_math.o: ft_math.c.o
+
+.PHONY : ft_math.o
+
+# target to build an object file
+ft_math.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_math.c.o
+.PHONY : ft_math.c.o
+
+ft_math.i: ft_math.c.i
+
+.PHONY : ft_math.i
+
+# target to preprocess a source file
+ft_math.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_math.c.i
+.PHONY : ft_math.c.i
+
+ft_math.s: ft_math.c.s
+
+.PHONY : ft_math.s
+
+# target to generate assembly for a file
+ft_math.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_math.c.s
+.PHONY : ft_math.c.s
+
+ft_pointer.o: ft_pointer.c.o
+
+.PHONY : ft_pointer.o
+
+# target to build an object file
+ft_pointer.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pointer.c.o
+.PHONY : ft_pointer.c.o
+
+ft_pointer.i: ft_pointer.c.i
+
+.PHONY : ft_pointer.i
+
+# target to preprocess a source file
+ft_pointer.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pointer.c.i
+.PHONY : ft_pointer.c.i
+
+ft_pointer.s: ft_pointer.c.s
+
+.PHONY : ft_pointer.s
+
+# target to generate assembly for a file
+ft_pointer.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pointer.c.s
+.PHONY : ft_pointer.c.s
+
 ft_printf.o: ft_printf.c.o
 
 .PHONY : ft_printf.o
@@ -366,6 +447,15 @@ help:
 	@echo "... ft_color.o"
 	@echo "... ft_color.i"
 	@echo "... ft_color.s"
+	@echo "... ft_itoa_base_c.o"
+	@echo "... ft_itoa_base_c.i"
+	@echo "... ft_itoa_base_c.s"
+	@echo "... ft_math.o"
+	@echo "... ft_math.i"
+	@echo "... ft_math.s"
+	@echo "... ft_pointer.o"
+	@echo "... ft_pointer.i"
+	@echo "... ft_pointer.s"
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"

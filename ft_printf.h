@@ -20,6 +20,29 @@ int buff_size;////////////////////////////////////////////////////
 # define CYAN		"\033[36m"
 # define EOC		"\033[0m"
 
+# define MAX(a, b)		b & ((a - b) >> 31) | a & (~(a - b) >> 31)
+# define MIN(a, b)		a & ((a - b) >> 31) | b & (~(a - b) >> 31)
+# define ABS(a)			(a < 0) ? -a : a
+# define DABS(a)		(a < 0.0f) ? -a : a
+# define STRERR			strerror
+
+# define F_SHARP		(1 << 0)
+# define F_SPACE		(1 << 1)
+# define F_PLUS			(1 << 2)
+# define F_MINUS		(1 << 3)
+# define F_ZERO			(1 << 4)
+# define F_WILDCARD		(1 << 5)
+# define F_UPCASE		(1 << 6)
+# define F_SHORT		(1 << 7)
+# define F_SHORT2		(1 << 8)
+# define F_LONG			(1 << 9)
+# define F_LONG2		(1 << 10)
+# define F_INTMAX		(1 << 11)
+# define F_SIZE_T		(1 << 12)
+# define F_MIN_LEN		(1 << 13)
+# define F_APP_PRECI	(1 << 14)
+# define F_POINTER		(1 << 15)
+
 typedef struct			s_printf
 {
 	int					len;
@@ -48,6 +71,7 @@ void	ft_realloc_buff(t_printf *p);
 */
 int 	ft_addchar(t_printf *p);
 int		ft_addstr(t_printf *p);
+int		ft_add_p(t_printf *p);
 int 	ft_addnbr(t_printf *p);
 int 	ft_add_buff(t_printf *p);
 int 	ft_add_buff_char(t_printf *p, char c);
@@ -74,5 +98,11 @@ int		is_a_flag(char c);
 int		is_a_printf_flag(char c);
 int 	ft_tocnost(t_printf *p);
 int 	is_a_digit(char c);
+//////////
+int64_t ft_floor(long double base);
+long double	ft_pow(long double base, long double exp);
+int64_t ft_log10(long double base);
+int 	ft_add_plus(t_printf *p, int flag);
+char 	*ft_add_accur(char *str, int acu, t_printf *p);
 
 #endif

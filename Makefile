@@ -24,6 +24,9 @@ SRC = ft_printf.c\
 		add_str.c\
 		add_buff.c\
 		add_d.c\
+		ft_itoa_base_c.c\
+		ft_pointer.c\
+		ft_math.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 

@@ -13,4 +13,7 @@ add_executable(ft_printf
         add_char.c
         add_str.c
         add_buff.c
-        add_d.c)
+        add_d.c
+        ft_itoa_base_c.c
+        ft_pointer.c
+        ft_math.c)

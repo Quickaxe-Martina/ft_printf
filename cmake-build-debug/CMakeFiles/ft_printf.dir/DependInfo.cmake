@@ -10,6 +10,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/CLionProjects/ft_printf/add_str.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/add_str.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_add_c_s_d.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_add_c_s_d.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_color.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_color.c.o"
+  "/Users/qmartina/CLionProjects/ft_printf/ft_itoa_base_c.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_itoa_base_c.c.o"
+  "/Users/qmartina/CLionProjects/ft_printf/ft_math.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_math.c.o"
+  "/Users/qmartina/CLionProjects/ft_printf/ft_pointer.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_pointer.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_printf.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_printf.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/main.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/main.c.o"
   )

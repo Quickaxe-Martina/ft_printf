@@ -98,6 +98,15 @@
 		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_color.c">
 			<Option target="ft_printf"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_itoa_base_c.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_math.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_pointer.c">
+			<Option target="ft_printf"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_printf.c">
 			<Option target="ft_printf"/>
 		</Unit>

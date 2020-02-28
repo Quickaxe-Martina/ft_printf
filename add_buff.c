@@ -45,7 +45,8 @@ void	ft_realloc_buff(t_printf *p)
 
 	buff_size *= 2;
 	i = -1;
-	tmp = (char *)malloc(sizeof(char) * buff_size + 1);///////////////////////////////////////////
+	tmp = ft_strnew(buff_size);
+//	tmp = (char *)malloc(sizeof(char) * buff_size + 1);///////////////////////////////////////////
 	while (++i < p->buff_index)
 		tmp[i] = p->buff[i];
 	free(p->buff);

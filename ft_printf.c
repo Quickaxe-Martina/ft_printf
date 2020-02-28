@@ -43,7 +43,7 @@ int		is_a_flag(char c)
 	if (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' || c == 'i' ||
 		c == 'o' || c == 'O' || c == 'u' || c == 'U' || c == 'x' || c == 'X' ||
 		c == 'c' || c == 'C' || c == '.' || c == '%' || c == 'h' || c == 'l' ||
-		c == 'j' || c == 'z' || c == 'f' || is_a_digit(c))
+		c == 'j' || c == 'z' || c == 'f' || c == 'L' || is_a_digit(c))
 		return (1);
 	return (0);
 }
@@ -82,7 +82,7 @@ void	ft_reset_flags(t_printf *p)
 	p->plus = 0;
 	p->point = 0;
 	p->width = 0;
-	p->accuracy = 0;
+	p->accuracy = -1;
 	p->l = 0;
 	p->h = 0;
 	p->L = 0;
@@ -132,18 +132,23 @@ int 	ft_parser(t_printf *p)
 	}
 	else if (*p->str == 'p')
 		ft_add_p(p);
-	else if (*p->str == 'o' || *p->str == 'u' || *p->str == 'x' || *p->str == 'X')
+	else if (*p->str == 'o' || *p->str == 'x' || *p->str == 'X' || *p->str == 'u')
 		ft_add_ouxX(p);
+	else
+		return (-1);
 	return (1);
 }
 
 int		ft_printf(const char *format, ...)
 {
 	t_printf p;
+	char 	*s;
 
 	p.fd = 1;
+	s = NULL;
 	buff_size = 64;////////////////////////////////////////////////
-	p.buff = (char *)malloc(sizeof(char) * buff_size);
+	p.buff = ft_strnew(buff_size);
+//	p.buff = (char *)malloc(sizeof(char) * buff_size);
 	p.buff_index = 0;
 	p.len = 0;
 	p.str = (char *)format;
@@ -154,7 +159,12 @@ int		ft_printf(const char *format, ...)
 		{
 			if (!(++p.str))
 				break ;
-			ft_parser(&p);
+			s = p.str;
+			if (ft_parser(&p) == -1)
+			{
+				p.str = s;
+				ft_add_buff(&p);
+			}
 		}
 		else if (*p.str == '{')
 			ft_color(&p);
@@ -164,5 +174,6 @@ int		ft_printf(const char *format, ...)
 	}
 	write(p.fd, p.buff, p.buff_index);
 	va_end(p.li);
+	free(p.buff);
 	return (p.buff_index);/////////////////////////////////
 }
