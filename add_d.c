@@ -18,7 +18,9 @@ char 	*ft_add_accur(char *str, int acu, t_printf *p)
 	int		i;
 	int		len;
 
-	if (!(s = (char *)malloc(sizeof(char) * acu + 1)))
+	if (acu == -1)
+		return (ft_strdup(str));
+	if (!(s = (char *)malloc(sizeof(char) * acu + 2)))
 	{
 		ft_putstr_fd("malloc error\n", 2);
 		exit (1);
@@ -52,9 +54,9 @@ int 	ft_add_plus(t_printf *p, int flag)
 
 int 	ft_addnbr(t_printf *p)
 {
-	__int128_t 	nbr;
+    int64_t 	nbr;
 	char 		*s;
-	__int128_t	k;
+    int64_t	k;
 	char		c;
 
 	nbr = va_arg(p->li, long long);
@@ -64,7 +66,7 @@ int 	ft_addnbr(t_printf *p)
 	s = ft_itoa_base_c(nbr, 10, 0);
 	if (p->accuracy > (int)ft_strlen(s) || (nbr < 0 && p->accuracy > (int)ft_strlen(s) - 1))
 		s = ft_add_accur(s, p->accuracy, p);
-	if (p->accuracy == 0 || (p->accuracy == -1 && p->point == 1))
+	if ((p->accuracy == 0 || (p->accuracy == -1 && p->point == 1)) && nbr == 0)
 		s[0] = '\0';
 	k = (__int128_t)ft_strlen(s) - 1;
 	p->zero = p->accuracy > 0 ? 0 : p->zero;

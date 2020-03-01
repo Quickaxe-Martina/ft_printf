@@ -10,21 +10,21 @@
 #include <stdint.h>
 # include "libft/libft.h"
 
-int buff_size;////////////////////////////////////////////////////
 
-# define RED		"\033[31m"
-# define GREEN		"\033[32m"
-# define YELLOW		"\033[33m"
-# define BLUE		"\033[34m"
-# define PURPLE		"\033[35m"
-# define CYAN		"\033[36m"
-# define EOC		"\033[0m"
+# define RED		"\x1B[31m"
+# define GREEN		"\x1B[32m"
+# define YELLOW		"\x1B[33m"
+# define BLUE		"\x1B[34m"
+# define PURPLE		"\x1B[35m"
+# define CYAN		"\x1B[36m"
+# define EOC		"\x1B[0m"
 
 # define MAX(a, b)		b & ((a - b) >> 31) | a & (~(a - b) >> 31)
 # define MIN(a, b)		a & ((a - b) >> 31) | b & (~(a - b) >> 31)
 # define ABS(a)			(a < 0) ? -a : a
 # define DABS(a)		(a < 0.0f) ? -a : a
 # define STRERR			strerror
+# define DEC "0x"
 
 # define F_SHARP		(1 << 0)
 # define F_SPACE		(1 << 1)
@@ -56,6 +56,7 @@ typedef struct			s_printf
 	int					accuracy;//точность
 	int					fd;
 	int					buff_index;
+	int 				buff_size;
 	char				*buff;//буфер
 	va_list				li;
 	char				*str;

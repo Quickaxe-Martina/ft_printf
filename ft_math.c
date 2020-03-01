@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-long double	ft_pow(long double base, long double exp)
+long double			ft_pow(long double base, long double exp)
 {
-	long double i;
-	long double a;
+	long double		i;
+	long double		a;
 
 	i = 1.0;
 	a = base;
@@ -32,7 +32,7 @@ long double	ft_pow(long double base, long double exp)
 		}
 		return (base);
 	}
-	while(i < exp)
+	while (i < exp)
 	{
 		base *= a;
 		i++;
@@ -40,9 +40,9 @@ long double	ft_pow(long double base, long double exp)
 	return (base);
 }
 
-int64_t ft_floor(long double base)
+int64_t				ft_floor(long double base)
 {
-	int64_t d;
+	int64_t			d;
 
 	d = (int64_t)base;
 	if (base < 0.0)
@@ -50,13 +50,12 @@ int64_t ft_floor(long double base)
 	return (d);
 }
 
-int64_t ft_log10(long double base)
+int64_t				ft_log10(long double base)
 {
-	int64_t a;
-	int64_t i;
+	int64_t			a;
+	int64_t			i;
 
 	a = 10;
-//	printf("base: %f\n", base);
 	if (base <= 1.0)
 		return (0);
 	i = 0;
@@ -65,6 +64,5 @@ int64_t ft_log10(long double base)
 		a *= 10;
 		i++;
 	}
-//	printf("a: %lld\n", a);
 	return (i);
 }

@@ -1,44 +1,6 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 #include <math.h>
-/*int 	ft_addnbr(t_printf *p)
-{
-	__int128_t 	nbr;
-	__int128_t	k;
-	char 		*s;
-	char		c;
-
-	//nbr = va_arg(p->li, int);
-	nbr = va_arg(p->li, long long);
-	nbr = (p->l == 0) ? (int)nbr : nbr;
-	nbr = (p->h == 1) ? (short)nbr : nbr;
-	nbr = (p->h == 2) ? (char)nbr : nbr;
-	s = ft_itoa_base_c(nbr, 10, p->accuracy);
-	k = ft_strlen(s);
-	if (p->width > 0 && k < p->width)
-	{
-		c = p->zero ? '0' : ' ';
-		if (p->minus == 1)
-		{
-			ft_add_buff_str(p, s);
-			while(p->width - ++k)
-				ft_add_buff_char(p, c);
-		}
-		else if (p->minus == 0)
-		{
-			while(p->width - ++k)
-				ft_add_buff_char(p, c);
-			ft_add_buff_str(p, s);
-		}
-	}
-	else
-	{
-		ft_add_buff_str(p, s);
-	}
-	free(s);
-	return (1);
-//	printf("nbr original: %d\n", nbr);
-}*/
 
 char	*dtoa(char *s, long double n)
 {
@@ -86,9 +48,7 @@ char	*dtoa(char *s, long double n)
 			weight = ft_pow(10.0, m);
 			if (weight > 0 && !isinf(weight))
 			{
-//				write(1, "GHF\n", 4);
 				digit = ft_floor(n / weight);
-//				printf("dig: %lld", digit);
 				n -= (digit * weight);
 				*(c++) = '0' + digit;
 			}
@@ -133,64 +93,6 @@ char	*dtoa(char *s, long double n)
 	return (s);
 }
 
-/*double	ft_pow(double n, int pow)
-{
-	return (pow ? n * ft_pow(n, pow - 1) : 1);
-}
-
-static void		ldtoa_fill(double n, t_printf *p, long value)
-{
-	int		len;
-	int		accuracy;
-	char	s[48];
-
-	len = p->printed - 1 - p->precision;
-	accuracy = p->printed - 1 - len;
-	while (accuracy--)
-	{
-		s[len + accuracy + 1] = value % 10 + '0';
-		value /= 10;
-	}
-	(p->precision > 0) ? s[len] = '.' : 0;
-	value = (long)(ABS(n));
-	while (++accuracy < len)
-	{
-		s[len - accuracy - 1] = value % 10 + '0';
-		value /= 10;
-	}
-	(p->f & F_APP_PRECI && p->f & F_ZERO) ? s[0] = ' ' : 0;
-	(p->f & F_SPACE) ? s[0] = ' ' : 0;
-	(n < 0) ? s[0] = '-' : 0;
-	(p->f & F_PLUS && n >= 0) ? s[0] = '+' : 0;
-//	buffer(p, s, len + 1 + 6);
-}
-
-void			pf_putdouble(t_printf *p)
-{
-	double		n;
-	long		tmp;
-	int			len;
-	double		decimal;
-	long		value;
-
-	n = (double)va_arg(p->li, double);
-	(p->f & F_ZERO) ? p->precision = p->min_length : 0;
-	if (!(p->f & F_APP_PRECI))
-		p->precision = 6;
-	len = (p->precision > 0) ? 1 : 0;
-	tmp = (long)(ABS(n));
-	while (tmp && ++len)
-		tmp /= 10;
-	(p->f & F_ZERO) ? p->precision = p->min_length : 0;
-	p->printed = p->precision + len + ((n < 0) ? 1 : 0);
-	decimal = ((n < 0.0f) ? -n : n);
-	decimal = (decimal - (long)(((n < 0.0f) ? -n : n))) *
-			  ft_pow(10, p->precision + 1);
-	decimal = ((long)decimal % 10 > 4) ? (decimal) / 10 + 1 : decimal / 10;
-	value = (int)decimal;
-	ldtoa_fill(n, p, value);
-}*/
-
 void	ft_okr(char *s, t_printf *p)
 {
 	int i;
@@ -198,9 +100,6 @@ void	ft_okr(char *s, t_printf *p)
 
 	if (p->accuracy == -1)
 		p->accuracy = 6;
-//	i = -1;
-//	while (s[++i])
-//		;
 	j = -1;
 	while (s[++j] && s[j] != '.')
 		;
@@ -258,6 +157,23 @@ int 	is_one(char *str, long double f)
 	return (1);
 }
 
+void    ft_cheak_float(char *str, int64_t nbr)
+{
+    char    *s;
+    int     i;
+    int     j;
+
+    s = ft_itoa_base_c(nbr, 10, 0);
+    j = -1;
+    i = 0;
+    if (str[i] == '-' && s[i] != '-')
+        i++;
+    while (s[++j])
+        str[j + i] = s[j];
+    str[j + i] = '.';
+    free(s);
+}
+
 int 	ft_add_f(t_printf *p)
 {
 	long double			f;
@@ -274,6 +190,7 @@ int 	ft_add_f(t_printf *p)
 	else
 		f = va_arg(p->li, double);
 	dtoa(s, f);
+	ft_cheak_float(s, (int64_t)f);
 	is_one(s, f);
 	ft_okr(s, p);
 	k = ft_strlen(s);
@@ -320,7 +237,10 @@ char 	*ft_add_accur2(char *str, int acu, t_printf *p)
 	int		i;
 	int		len;
 
-	if (!(s = (char *)malloc(sizeof(char) * acu + 1)))
+//	printf("\n\nacu: %d\ntype: %c\nstr: %s\n", acu, *p->str, str);
+	if (acu == -1 || (*p->str == 'o' && acu <= (int)ft_strlen(str)))
+		return (ft_strdup(str));
+	if (!(s = ft_strnew(acu + 2)))
 	{
 		ft_putstr_fd("malloc error\n", 2);
 		exit (1);
@@ -339,7 +259,7 @@ char 	*ft_add_accur2(char *str, int acu, t_printf *p)
 	while (str[++len])
 		s[i + len] = str[len];
 	s[i + len] = '\0';
-	free(str);
+//	free(str);
 	p->zero = p->accuracy > 0 ? 0 : p->zero;
 	return (s);
 }
@@ -366,9 +286,11 @@ int		ft_add_ouxX(t_printf *p)
 
 	s = NULL;
 	i = va_arg(p->li, unsigned long long);
+//	printf("\n\nlll: %d\n", p->l);
 	i = (p->l == 0) ? (unsigned)i : i;
 	i = (p->h == 1) ? (unsigned short)i : i;
 	i = (p->h == 2) ? (unsigned char)i : i;
+//	printf ("\n\nNB: %llu\n", i);
 	if (*p->str == 'o')
 		s = ft_itoa_base_c(i, 8, -32);
 	else if (*p->str == 'u')
@@ -377,7 +299,7 @@ int		ft_add_ouxX(t_printf *p)
 		s = ft_itoa_base_c(i, 16, -32);
 	else if (*p->str == 'X')
 		s = ft_itoa_base_c(i, 16, 0);
-	if (p->accuracy == 0 || (p->accuracy == -1 && p->point == 1))
+	if (p->accuracy == 0 || (p->accuracy == -1 && p->point == 1 && (*p->str != 'o' || i == 0)))
 		ft_bzero(s, ft_strlen(s));
 	if (p->sharp == 1 && *p->str == 'o' && (i > 0 || (p->point == 1 && i == 0)))
 	{
@@ -385,7 +307,9 @@ int		ft_add_ouxX(t_printf *p)
 		s = ft_strjoin("0", tmp);
 		free(tmp);
 	}
-	s = ft_add_accur2(s, p->accuracy, p);
+	tmp = s;
+	s = ft_add_accur2(tmp, p->accuracy, p);
+	free(tmp);
 	if (p->sharp == 1 && (*p->str == 'X' || *p->str == 'x') && i != 0 && !is_nul(s))
 	{
 		tmp = s;
@@ -404,11 +328,13 @@ int		ft_add_ouxX(t_printf *p)
 			c = '0';
 		else
 			c = ' ';
+		if (*p->str == 'o' && p->accuracy > 0)
+			c = ' ';
 		if (p->minus == 1)
 		{
 			while(s[++i])
 				ft_add_buff_char(p, s[i]);
-			while(++i <= p->width)
+			while((int)++i <= p->width)
 				ft_add_buff_char(p, c);
 		}
 		else if (p->minus == 0)
@@ -423,17 +349,19 @@ int		ft_add_ouxX(t_printf *p)
 					ft_add_buff_str(p, "0X");
 				p->width -= 2;
 			}
-			while(++i < (p->width - (int)ft_strlen(s)))
+			while((int)++i < (p->width - (int)ft_strlen(s)))
 				ft_add_buff_char(p, c);
 			i = (p->buff[p->buff_index - 1] == 'x' || p->buff[p->buff_index - 1] == 'X') && p->sharp == 1 && c == '0' ? 0 : -1;
 			while(s[++i])
 				ft_add_buff_char(p, s[i]);
+//			ft_add_buff_str(p, s);
 		}
 	}
 	else
 	{
-		while(s[++i])
-			ft_add_buff_char(p, s[i]);
+		ft_add_buff_str(p, s);
+//		while(s[++i])
+//			ft_add_buff_char(p, s[i]);
 	}
 //	ft_add_buff_str(p, s);
 	free(s);

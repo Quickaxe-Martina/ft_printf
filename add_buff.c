@@ -14,7 +14,7 @@
 
 int 	ft_add_buff(t_printf *p)
 {
-	if (p->buff_index == buff_size)
+	if (p->buff_index == p->buff_size)
 		ft_realloc_buff(p);
 	p->buff[p->buff_index++] = *p->str;
 	return (1);
@@ -22,7 +22,7 @@ int 	ft_add_buff(t_printf *p)
 
 int 	ft_add_buff_char(t_printf *p, char c)
 {
-	if (p->buff_index == buff_size)
+	if (p->buff_index == p->buff_size)
 		ft_realloc_buff(p);
 	p->buff[p->buff_index++] = c;
 	return (1);
@@ -43,9 +43,9 @@ void	ft_realloc_buff(t_printf *p)
 	char	*tmp;
 	int 	i;
 
-	buff_size *= 2;
+	p->buff_size *= 2;
 	i = -1;
-	tmp = ft_strnew(buff_size);
+	tmp = ft_strnew(p->buff_size);
 //	tmp = (char *)malloc(sizeof(char) * buff_size + 1);///////////////////////////////////////////
 	while (++i < p->buff_index)
 		tmp[i] = p->buff[i];

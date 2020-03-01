@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include "ft_printf.h"
 #include <math.h>
+#include <limits.h>
 
 int main(void)
 {
@@ -35,10 +36,10 @@ int main(void)
 //	printf("\n%d\n", ft_printf("%04d\n", -532));
 //	printf("%04d\n", -532);
 //	printf("1)%f\n2)%f\n", floor(343.55), ft_floor(343.55));
-	double f = -5.0299999l;
 	ft_printf("test:\n");
-	ft_printf("%#03x", 0);
+	printf("*TEST*%d***\n", ft_printf("{RED}%#08.3o{EOC}", 8375));
+    ft_printf("\n");
 	printf("orig:\n");
-	printf("%#03x", 0);
+	printf("*ORIG*%d***\n", printf("{RED}%#08.3o{EOC}", 8375));
 	return (6);
 }

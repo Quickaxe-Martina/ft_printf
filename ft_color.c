@@ -15,22 +15,22 @@ int 	ft_color(t_printf *p)
 		i++;
 		p->str++;
 	}
-	p->str++;
+//	p->str++;
 	col[i] = '\0';
 	if (strcmp(col, "red") == 0 || strcmp(col, "RED") == 0)///////////////////////
-		printf("ITS RED\n");
+		ft_add_buff_str(p, RED);
 	else if (strcmp(col, "green") == 0 || strcmp(col, "GREEN") == 0)///////////////////////
-		printf("ITS GREEN\n");
+		ft_add_buff_str(p, GREEN);
 	else if (strcmp(col, "yellow") == 0 || strcmp(col, "YELLOW") == 0)///////////////////////
-		printf("ITS YELLOW\n");
+		ft_add_buff_str(p, YELLOW);
 	else if (strcmp(col, "blue") == 0 || strcmp(col, "BLUE") == 0)///////////////////////
-		printf("ITS BLUE\n");
+		ft_add_buff_str(p, BLUE);
 	else if (strcmp(col, "purple") == 0 || strcmp(col, "PURPLE") == 0)///////////////////////
-		printf("ITS PURPLE\n");
+		ft_add_buff_str(p, PURPLE);
 	else if (strcmp(col, "cyan") == 0 || strcmp(col, "CYAN") == 0)///////////////////////
-		printf("ITS CYAN\n");
+		ft_add_buff_str(p, CYAN);
 	else if (strcmp(col, "eoc") == 0 || strcmp(col, "EOC") == 0)///////////////////////
-		printf("ITS END OF COLOR\n");
+		ft_add_buff_str(p, EOC);
 	else
 	{
 		p->str = tmp;

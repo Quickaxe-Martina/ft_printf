@@ -12,7 +12,7 @@
 
 # ----- LIBFTPRINTF PATH -----
 #
-LIBFTPRINTF_PATH =      ./../../
+LIBFTPRINTF_PATH =      ../../
 
 # ----- VARIABLES -----
 
