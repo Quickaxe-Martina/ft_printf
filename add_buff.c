@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int 	ft_add_buff(t_printf *p)
+int			ft_add_buff(t_printf *p)
 {
 	if (p->buff_index == p->buff_size)
 		ft_realloc_buff(p);
@@ -20,7 +20,7 @@ int 	ft_add_buff(t_printf *p)
 	return (1);
 }
 
-int 	ft_add_buff_char(t_printf *p, char c)
+int			ft_add_buff_char(t_printf *p, char c)
 {
 	if (p->buff_index == p->buff_size)
 		ft_realloc_buff(p);
@@ -28,25 +28,25 @@ int 	ft_add_buff_char(t_printf *p, char c)
 	return (1);
 }
 
-int		ft_add_buff_str(t_printf *p, char *s)
+int			ft_add_buff_str(t_printf *p, char *s)
 {
 	int	i;
 
 	i = -1;
-	while(s[++i])
+	while (s[++i])
 		ft_add_buff_char(p, s[i]);
 	return (i);
 }
 
-void	ft_realloc_buff(t_printf *p)
+void		ft_realloc_buff(t_printf *p)
 {
 	char	*tmp;
-	int 	i;
+	int		i;
 
 	p->buff_size *= 2;
 	i = -1;
-	tmp = ft_strnew(p->buff_size);
-//	tmp = (char *)malloc(sizeof(char) * buff_size + 1);///////////////////////////////////////////
+	if (!(tmp = ft_strnew(p->buff_size)))
+		exit(1);
 	while (++i < p->buff_index)
 		tmp[i] = p->buff[i];
 	free(p->buff);

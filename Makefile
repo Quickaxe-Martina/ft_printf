@@ -18,15 +18,20 @@ CFLAGS = -Wall -Wextra -Werror -g
 PATH_LIBFT = libft
 
 SRC = ft_printf.c\
-		ft_color.c\
 		ft_add_c_s_d.c\
 		add_char.c\
 		add_str.c\
+		ft_oxu.c\
+		ft_pars.c\
+		ft_pars2.c\
 		add_buff.c\
 		add_d.c\
 		ft_itoa_base_c.c\
+		ft_add_double.c\
+		ft_okr_double.c\
 		ft_pointer.c\
 		ft_math.c\
+		ft_dtoa.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 

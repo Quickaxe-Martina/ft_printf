@@ -8,7 +8,6 @@ add_executable(ft_printf
         libft/libft.h
         main.c
         ft_printf.c
-        ft_color.c
         ft_add_c_s_d.c
         add_char.c
         add_str.c
@@ -16,4 +15,10 @@ add_executable(ft_printf
         add_d.c
         ft_itoa_base_c.c
         ft_pointer.c
+        ft_dtoa.c
+        ft_add_double.c
+        ft_okr_double.c
+        ft_oxu.c
+        ft_pars.c
+        ft_pars2.c
         ft_math.c)

@@ -258,32 +258,59 @@ ft_add_c_s_d.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_add_c_s_d.c.s
 .PHONY : ft_add_c_s_d.c.s
 
-ft_color.o: ft_color.c.o
+ft_add_double.o: ft_add_double.c.o
 
-.PHONY : ft_color.o
+.PHONY : ft_add_double.o
 
 # target to build an object file
-ft_color.c.o:
-	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_color.c.o
-.PHONY : ft_color.c.o
+ft_add_double.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_add_double.c.o
+.PHONY : ft_add_double.c.o
 
-ft_color.i: ft_color.c.i
+ft_add_double.i: ft_add_double.c.i
 
-.PHONY : ft_color.i
+.PHONY : ft_add_double.i
 
 # target to preprocess a source file
-ft_color.c.i:
-	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_color.c.i
-.PHONY : ft_color.c.i
+ft_add_double.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_add_double.c.i
+.PHONY : ft_add_double.c.i
 
-ft_color.s: ft_color.c.s
+ft_add_double.s: ft_add_double.c.s
 
-.PHONY : ft_color.s
+.PHONY : ft_add_double.s
 
 # target to generate assembly for a file
-ft_color.c.s:
-	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_color.c.s
-.PHONY : ft_color.c.s
+ft_add_double.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_add_double.c.s
+.PHONY : ft_add_double.c.s
+
+ft_dtoa.o: ft_dtoa.c.o
+
+.PHONY : ft_dtoa.o
+
+# target to build an object file
+ft_dtoa.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_dtoa.c.o
+.PHONY : ft_dtoa.c.o
+
+ft_dtoa.i: ft_dtoa.c.i
+
+.PHONY : ft_dtoa.i
+
+# target to preprocess a source file
+ft_dtoa.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_dtoa.c.i
+.PHONY : ft_dtoa.c.i
+
+ft_dtoa.s: ft_dtoa.c.s
+
+.PHONY : ft_dtoa.s
+
+# target to generate assembly for a file
+ft_dtoa.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_dtoa.c.s
+.PHONY : ft_dtoa.c.s
 
 ft_itoa_base_c.o: ft_itoa_base_c.c.o
 
@@ -338,6 +365,114 @@ ft_math.s: ft_math.c.s
 ft_math.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_math.c.s
 .PHONY : ft_math.c.s
+
+ft_okr_double.o: ft_okr_double.c.o
+
+.PHONY : ft_okr_double.o
+
+# target to build an object file
+ft_okr_double.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_okr_double.c.o
+.PHONY : ft_okr_double.c.o
+
+ft_okr_double.i: ft_okr_double.c.i
+
+.PHONY : ft_okr_double.i
+
+# target to preprocess a source file
+ft_okr_double.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_okr_double.c.i
+.PHONY : ft_okr_double.c.i
+
+ft_okr_double.s: ft_okr_double.c.s
+
+.PHONY : ft_okr_double.s
+
+# target to generate assembly for a file
+ft_okr_double.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_okr_double.c.s
+.PHONY : ft_okr_double.c.s
+
+ft_oxu.o: ft_oxu.c.o
+
+.PHONY : ft_oxu.o
+
+# target to build an object file
+ft_oxu.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_oxu.c.o
+.PHONY : ft_oxu.c.o
+
+ft_oxu.i: ft_oxu.c.i
+
+.PHONY : ft_oxu.i
+
+# target to preprocess a source file
+ft_oxu.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_oxu.c.i
+.PHONY : ft_oxu.c.i
+
+ft_oxu.s: ft_oxu.c.s
+
+.PHONY : ft_oxu.s
+
+# target to generate assembly for a file
+ft_oxu.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_oxu.c.s
+.PHONY : ft_oxu.c.s
+
+ft_pars.o: ft_pars.c.o
+
+.PHONY : ft_pars.o
+
+# target to build an object file
+ft_pars.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pars.c.o
+.PHONY : ft_pars.c.o
+
+ft_pars.i: ft_pars.c.i
+
+.PHONY : ft_pars.i
+
+# target to preprocess a source file
+ft_pars.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pars.c.i
+.PHONY : ft_pars.c.i
+
+ft_pars.s: ft_pars.c.s
+
+.PHONY : ft_pars.s
+
+# target to generate assembly for a file
+ft_pars.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pars.c.s
+.PHONY : ft_pars.c.s
+
+ft_pars2.o: ft_pars2.c.o
+
+.PHONY : ft_pars2.o
+
+# target to build an object file
+ft_pars2.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pars2.c.o
+.PHONY : ft_pars2.c.o
+
+ft_pars2.i: ft_pars2.c.i
+
+.PHONY : ft_pars2.i
+
+# target to preprocess a source file
+ft_pars2.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pars2.c.i
+.PHONY : ft_pars2.c.i
+
+ft_pars2.s: ft_pars2.c.s
+
+.PHONY : ft_pars2.s
+
+# target to generate assembly for a file
+ft_pars2.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pars2.c.s
+.PHONY : ft_pars2.c.s
 
 ft_pointer.o: ft_pointer.c.o
 
@@ -444,15 +579,30 @@ help:
 	@echo "... ft_add_c_s_d.o"
 	@echo "... ft_add_c_s_d.i"
 	@echo "... ft_add_c_s_d.s"
-	@echo "... ft_color.o"
-	@echo "... ft_color.i"
-	@echo "... ft_color.s"
+	@echo "... ft_add_double.o"
+	@echo "... ft_add_double.i"
+	@echo "... ft_add_double.s"
+	@echo "... ft_dtoa.o"
+	@echo "... ft_dtoa.i"
+	@echo "... ft_dtoa.s"
 	@echo "... ft_itoa_base_c.o"
 	@echo "... ft_itoa_base_c.i"
 	@echo "... ft_itoa_base_c.s"
 	@echo "... ft_math.o"
 	@echo "... ft_math.i"
 	@echo "... ft_math.s"
+	@echo "... ft_okr_double.o"
+	@echo "... ft_okr_double.i"
+	@echo "... ft_okr_double.s"
+	@echo "... ft_oxu.o"
+	@echo "... ft_oxu.i"
+	@echo "... ft_oxu.s"
+	@echo "... ft_pars.o"
+	@echo "... ft_pars.i"
+	@echo "... ft_pars.s"
+	@echo "... ft_pars2.o"
+	@echo "... ft_pars2.i"
+	@echo "... ft_pars2.s"
 	@echo "... ft_pointer.o"
 	@echo "... ft_pointer.i"
 	@echo "... ft_pointer.s"

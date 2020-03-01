@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int 	ft_addchar_c(t_printf *p, char ch)
+int				ft_addchar_c(t_printf *p, char ch)
 {
-	int 		c;
+	int			c;
 	int			i;
 
 	i = 0;
@@ -26,7 +26,7 @@ int 	ft_addchar_c(t_printf *p, char ch)
 			c = '0';
 		else
 			c = ' ';
-		while(++i < p->width)
+		while (++i < p->width)
 			ft_add_buff_char(p, c);
 		if (p->minus == 0)
 			ft_add_buff_char(p, ch);
@@ -36,9 +36,9 @@ int 	ft_addchar_c(t_printf *p, char ch)
 	return (1);
 }
 
-int 	ft_addchar(t_printf *p)
+int				ft_addchar(t_printf *p)
 {
-	int 		c;
+	int			c;
 	int			i;
 
 	i = 0;
@@ -50,7 +50,7 @@ int 	ft_addchar(t_printf *p)
 			c = '0';
 		else
 			c = ' ';
-		while(++i < p->width)
+		while (++i < p->width)
 			ft_add_buff_char(p, c);
 		if (p->minus == 0)
 			ft_add_buff_char(p, va_arg(p->li, int));

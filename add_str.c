@@ -12,46 +12,46 @@
 
 #include "ft_printf.h"
 
-int		ft_addstr(t_printf *p)
+void		width_str(t_printf *p, char *s, int i)
+{
+	char	c;
+
+	c = p->zero ? '0' : ' ';
+	if (p->minus == 1)
+	{
+		while (s[++i])
+			ft_add_buff_char(p, s[i]);
+		while (++i <= p->width)
+			ft_add_buff_char(p, c);
+	}
+	else if (p->minus == 0)
+	{
+		while (++i < (p->width - (int)ft_strlen(s)))
+			ft_add_buff_char(p, c);
+		i = -1;
+		while (s[++i])
+			ft_add_buff_char(p, s[i]);
+	}
+}
+
+int			ft_addstr(t_printf *p)
 {
 	char	*s;
 	int		i;
-	char	c;
 
 	i = -1;
 	s = ft_strdup(va_arg(p->li, char*));
 	if (s == NULL)
 		s = ft_strdup("(null)");
-//	printf("point: %d\n", p->point);
 	if ((p->accuracy > 0 || p->point == 1) && p->accuracy < (int)ft_strlen(s))
-		s[p->accuracy] = '\0';//////////////////////возможен инвалид врайт
+		s[p->accuracy] = '\0';
 	if (p->point == 1 && p->accuracy == -1)
 		s[0] = '\0';
 	if (p->width > 0 && p->width > (int)ft_strlen(s))
-	{
-		if (p->zero == 1)
-			c = '0';
-		else
-			c = ' ';
-		if (p->minus == 1)
-		{
-			while(s[++i])
-				ft_add_buff_char(p, s[i]);
-			while(++i <= p->width)
-				ft_add_buff_char(p, c);
-		}
-		else if (p->minus == 0)
-		{
-			while(++i < (p->width - (int)ft_strlen(s)))
-				ft_add_buff_char(p, c);
-			i = -1;
-			while(s[++i])
-				ft_add_buff_char(p, s[i]);
-		}
-	}
+		width_str(p, s, i);
 	else
 	{
-		while(s[++i])
+		while (s[++i])
 			ft_add_buff_char(p, s[i]);
 	}
 	free(s);
