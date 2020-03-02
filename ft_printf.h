@@ -60,6 +60,9 @@ typedef struct			s_dtoa
 }						t_dtoa;
 
 int						ft_printf(const char *format, ...);
+int						ft_dprintf(int fd, const char *format, ...);
+int						ft_sprintf(char *buffer, const char *format, ...);
+int						ft_strprintf(char **str, const char *format, ...);
 void					ft_realloc_buff(t_printf *p);
 int						ft_addchar(t_printf *p);
 int						ft_addstr(t_printf *p);
@@ -92,6 +95,9 @@ char					*ft_str_oux(t_printf *p, __int128_t i);
 void					ft_take_arg_oux(t_printf *p, __int128_t *i);
 char					*ft_add_accur2(char *str, int acu, t_printf *p);
 int						is_nul(char *str);
+void					cheak_zvezd(t_printf *p);
+int						return_print(t_printf *p);
+void					init_printf(t_printf *p, const char *format, int fd);
 void					cheak_zvezd(t_printf *p);
 
 #endif

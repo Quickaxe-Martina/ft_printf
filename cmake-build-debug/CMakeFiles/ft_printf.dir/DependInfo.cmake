@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/CLionProjects/ft_printf/ft_pars.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_pars.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_pars2.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_pars2.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_pointer.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_pointer.c.o"
+  "/Users/qmartina/CLionProjects/ft_printf/ft_pr_help.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_pr_help.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/ft_printf.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_printf.c.o"
   "/Users/qmartina/CLionProjects/ft_printf/main.c" "/Users/qmartina/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/main.c.o"
   )

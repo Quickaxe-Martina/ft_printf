@@ -122,6 +122,9 @@
 		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_pointer.c">
 			<Option target="ft_printf"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_pr_help.c">
+			<Option target="ft_printf"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/CLionProjects/ft_printf/ft_printf.c">
 			<Option target="ft_printf"/>
 		</Unit>

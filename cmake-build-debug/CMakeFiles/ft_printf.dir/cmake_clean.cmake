@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_printf.dir/ft_pars.c.o"
   "CMakeFiles/ft_printf.dir/ft_pars2.c.o"
   "CMakeFiles/ft_printf.dir/ft_pointer.c.o"
+  "CMakeFiles/ft_printf.dir/ft_pr_help.c.o"
   "CMakeFiles/ft_printf.dir/ft_printf.c.o"
   "CMakeFiles/ft_printf.dir/main.c.o"
   "ft_printf"

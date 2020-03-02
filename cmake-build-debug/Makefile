@@ -501,6 +501,33 @@ ft_pointer.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pointer.c.s
 .PHONY : ft_pointer.c.s
 
+ft_pr_help.o: ft_pr_help.c.o
+
+.PHONY : ft_pr_help.o
+
+# target to build an object file
+ft_pr_help.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pr_help.c.o
+.PHONY : ft_pr_help.c.o
+
+ft_pr_help.i: ft_pr_help.c.i
+
+.PHONY : ft_pr_help.i
+
+# target to preprocess a source file
+ft_pr_help.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pr_help.c.i
+.PHONY : ft_pr_help.c.i
+
+ft_pr_help.s: ft_pr_help.c.s
+
+.PHONY : ft_pr_help.s
+
+# target to generate assembly for a file
+ft_pr_help.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_pr_help.c.s
+.PHONY : ft_pr_help.c.s
+
 ft_printf.o: ft_printf.c.o
 
 .PHONY : ft_printf.o
@@ -606,6 +633,9 @@ help:
 	@echo "... ft_pointer.o"
 	@echo "... ft_pointer.i"
 	@echo "... ft_pointer.s"
+	@echo "... ft_pr_help.o"
+	@echo "... ft_pr_help.i"
+	@echo "... ft_pr_help.s"
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"

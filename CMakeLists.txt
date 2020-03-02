@@ -21,4 +21,5 @@ add_executable(ft_printf
         ft_oxu.c
         ft_pars.c
         ft_pars2.c
+        ft_pr_help.c
         ft_math.c)
